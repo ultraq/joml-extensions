@@ -4,7 +4,7 @@ JOML extensions
 
 [![build](https://github.com/ultraq/joml-extensions/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/joml-extensions/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/ultraq/joml-extensions/graph/badge.svg?token=2CDJCIJZ0B)](https://codecov.io/gh/ultraq/joml-extensions)
-![Maven Central Version](https://img.shields.io/maven-central/v/nz.net.ultraq.groovy/joml-extensions)
+[![Maven Central Version](https://img.shields.io/maven-central/v/nz.net.ultraq.groovy/joml-extensions)](https://central.sonatype.com/artifact/nz.net.ultraq.groovy/joml-extensions)
 
 Extensions to JOML objects to make some operations easier.
 
