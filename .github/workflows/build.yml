@@ -12,3 +12,7 @@ jobs:
           distribution: 'temurin'
           java-version: 21
       - run: ./gradlew build
+      - uses: codecov/codecov-action@v4
+        with:
+          directory: build/reports/jacoco/
+          token: ${{ secrets.CODECOV_TOKEN }}

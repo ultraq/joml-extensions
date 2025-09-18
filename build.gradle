@@ -19,6 +19,10 @@ plugins {
 	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.6.2'
 }
 
+description = 'Extensions to JOML objects to make some operations easier'
+version = '0.1.0-SNAPSHOT'
+group = 'nz.net.ultraq.groovy'
+
 configure {
 	createGroovyProject()
 		.useJavaVersion(21)
@@ -30,4 +34,11 @@ configure {
 				implementation 'org.joml:joml:1.10.8'
 				implementation 'org.joml:joml-primitives:1.10.0'
 			}
+		.configureVerification()
+			.withTestDirectory('test')
+			.withTestDependencies() {
+				testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+			}
+			.useJUnitJupiter()
+			.useJacoco()
 }
