@@ -24,9 +24,9 @@ import spock.lang.Specification
  *
  * @author Emanuel Rabina
  */
-class JomlExtensionsTests extends Specification {
+class RectanglefExtensionsTests extends Specification {
 
-	def 'Set all values of a rectangle in one method call'() {
+	def 'Set all values in one method call'() {
 		given:
 			var rect = new Rectanglef()
 		when:

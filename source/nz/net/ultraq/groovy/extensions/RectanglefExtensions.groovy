@@ -23,7 +23,7 @@ import org.joml.primitives.Rectanglef
  *
  * @author Emanuel Rabina
  */
-class JomlExtensions {
+class RectanglefExtensions {
 
 	/**
 	 * Set a rectangle to represent the given values.
