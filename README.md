@@ -1,2 +1,5 @@
-# joml-extensions
-Extensions to JOML objects to make some operations easier
+
+JOML extensions
+===============
+
+Extensions to JOML objects to make some operations easier.
