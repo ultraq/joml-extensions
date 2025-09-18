@@ -14,27 +14,26 @@
  * limitations under the License.
  */
 
-package nz.net.ultraq.groovy.extensions
+package nz.net.ultraq.groovy.jomlextensions
 
 import org.joml.primitives.Rectanglef
-import spock.lang.Specification
 
 /**
- * Tests for the extension methods.
+ * Extensions to make JOML easier to use.
  *
  * @author Emanuel Rabina
  */
-class RectanglefExtensionsTests extends Specification {
+class RectanglefExtensions {
 
-	def 'Set all values in one method call'() {
-		given:
-			var rect = new Rectanglef()
-		when:
-			rect.set(1, 2, 3, 4)
-		then:
-			rect.minX == 1
-			rect.minY == 2
-			rect.maxX == 3
-			rect.maxY == 4
+	/**
+	 * Set a rectangle to represent the given values.
+	 */
+	static Rectanglef set(Rectanglef self, float minX, float minY, float maxX, float maxY) {
+
+		self.minX = minX
+		self.minY = minY
+		self.maxX = maxX
+		self.maxY = maxY
+		return self
 	}
 }
