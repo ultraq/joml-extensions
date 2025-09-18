@@ -52,8 +52,8 @@ configure {
 	createMavenPublication()
 		.withArtifacts(groovydocJar)
 		.configurePom() {
-			url = 'https://github.com/ultraq/groovy-extensions'
-			inceptionYear = '2020'
+			url = 'https://github.com/ultraq/joml-extensions'
+			inceptionYear = '2025'
 		}
 		.useApache20License()
 		.withGitHubScm('ultraq')
