@@ -20,7 +20,7 @@ plugins {
 }
 
 description = 'Extensions to JOML objects to make some operations easier'
-version = '0.1.0'
+version = '0.1.1'
 group = 'nz.net.ultraq.groovy'
 
 configure {
@@ -38,8 +38,12 @@ configure {
 			.withSourceDirectory('source')
 			.withDependencies() {
 				implementation 'org.apache.groovy:groovy:4.0.28'
-				implementation 'org.joml:joml:1.10.8'
-				implementation 'org.joml:joml-primitives:1.10.0'
+				implementation('org.joml:joml:1.10.8') {
+					exclude group: 'org.jetbrains.kotlin'
+				}
+				implementation('org.joml:joml-primitives:1.10.0') {
+					exclude group: 'org.jetbrains.kotlin'
+				}
 			}
 		.configureVerification()
 			.withTestDirectory('test')
