@@ -16,25 +16,25 @@
 
 package nz.net.ultraq.groovy.jomlextensions
 
-import org.joml.primitives.Rectanglef
+import org.joml.primitives.Rectanglei
 import spock.lang.Specification
 
 /**
- * Tests for the {@link RectanglefExtensions} methods.
+ * Tests for the {@link RectangleiExtensions} methods.
  *
  * @author Emanuel Rabina
  */
-class RectanglefExtensionsTests extends Specification {
+class RectangleiExtensionsTests extends Specification {
 
 	def 'Set all values in one method call'() {
 		given:
-			var rect = new Rectanglef()
+			Rectanglei rectangle = new Rectanglei()
 		when:
-			rect.set(1, 2, 3, 4)
+			rectangle.set(1, 2, 3, 4)
 		then:
-			rect.minX == 1
-			rect.minY == 2
-			rect.maxX == 3
-			rect.maxY == 4
+			rectangle.minX == 1
+			rectangle.minY == 2
+			rectangle.maxX == 3
+			rectangle.maxY == 4
 	}
 }

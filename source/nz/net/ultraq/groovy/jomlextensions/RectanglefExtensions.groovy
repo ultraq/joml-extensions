@@ -19,7 +19,7 @@ package nz.net.ultraq.groovy.jomlextensions
 import org.joml.primitives.Rectanglef
 
 /**
- * Extensions to make JOML easier to use.
+ * Extensions to the {@link Rectanglef} class.
  *
  * @author Emanuel Rabina
  */

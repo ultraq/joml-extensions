@@ -16,11 +16,11 @@
 
 plugins {
 	id 'idea'
-	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.6.2'
+	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.7.0'
 }
 
 description = 'Extensions to JOML objects to make some operations easier'
-version = '0.1.3'
+version = '0.1.4'
 group = 'nz.net.ultraq.groovy'
 
 configure {

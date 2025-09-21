@@ -16,5 +16,6 @@
 
 moduleName = joml-extensions
 moduleVersion = ${moduleVersion}
-extensionClasses = nz.net.ultraq.groovy.jomlextensions.RectanglefExtensions
+extensionClasses = nz.net.ultraq.groovy.jomlextensions.RectanglefExtensions,\
+                   nz.net.ultraq.groovy.jomlextensions.RectangleiExtensions
 staticExtensionClasses = nz.net.ultraq.groovy.jomlextensions.ConstantsExtensions
