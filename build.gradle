@@ -38,12 +38,8 @@ configure {
 			.withSourceDirectory('source')
 			.withDependencies() {
 				implementation 'org.apache.groovy:groovy:4.0.28'
-				implementation('org.joml:joml:1.10.8') {
-					exclude group: 'org.jetbrains.kotlin'
-				}
-				implementation('org.joml:joml-primitives:1.10.0') {
-					exclude group: 'org.jetbrains.kotlin'
-				}
+				implementation 'org.joml:joml:1.10.8'
+				implementation 'org.joml:joml-primitives:1.10.0'
 			}
 			.expandExtensionModuleVersion()
 		.configureVerification()
@@ -72,4 +68,8 @@ configure {
 			findProperty('mavenCentral.publisher.password'),
 			'nz.net.ultraq'
 		)
+}
+
+configurations.configureEach {
+	exclude group: 'org.jetbrains.kotlin'
 }
