@@ -26,6 +26,25 @@ import org.joml.primitives.Rectanglef
 class RectanglefExtensions {
 
 	/**
+	 * Expand the borders of a rectangle to include another rectangle.
+	 */
+	static Rectanglef expand(Rectanglef self, Rectanglef other) {
+
+		return expand(self, other.minX, other.minY, other.maxX, other.maxY)
+	}
+
+	/**
+	 * Expand the borders of a rectangle to include a given points representing
+	 * another rectangle.
+	 */
+	static Rectanglef expand(Rectanglef self, float minX, float minY, float maxX, float maxY) {
+
+		return self
+			.setMin(Math.min(self.minX, minX), Math.min(self.minY, minY))
+			.setMax(Math.max(self.maxX, maxX), Math.max(self.maxY, maxY))
+	}
+
+	/**
 	 * Set a rectangle to represent the given values.
 	 */
 	static Rectanglef set(Rectanglef self, float minX, float minY, float maxX, float maxY) {

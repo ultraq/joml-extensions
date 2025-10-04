@@ -20,7 +20,7 @@ plugins {
 }
 
 description = 'Extensions to JOML objects to make some operations easier'
-version = '0.1.4'
+version = '0.1.5-SNAPSHOT'
 group = 'nz.net.ultraq.groovy'
 
 configure {

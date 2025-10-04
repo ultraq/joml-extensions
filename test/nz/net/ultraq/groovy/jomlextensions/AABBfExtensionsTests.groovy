@@ -16,37 +16,27 @@
 
 package nz.net.ultraq.groovy.jomlextensions
 
-import org.joml.primitives.Rectanglef
+import org.joml.primitives.AABBf
 import spock.lang.Specification
 
 /**
- * Tests for the {@link RectanglefExtensions} methods.
+ * Tests for the {@link AABBfExtensions} methods.
  *
  * @author Emanuel Rabina
  */
-class RectanglefExtensionsTests extends Specification {
+class AABBfExtensionsTests extends Specification {
 
-	def 'Expand the borders of a rectangle to include another rectangle'() {
+	def 'Expand the borders of an AABB to include another AABB'() {
 		given:
-			var rect = new Rectanglef(0, 0, 3, 4)
+			var boundingBox = new AABBf(0, 0, 0, 5, 6, 7)
 		when:
-			rect.expand(new Rectanglef(1, 1, 5, 6))
+			boundingBox.expand(new AABBf(1, 1, 1, 8, 9, 10))
 		then:
-			rect.minX == 0
-			rect.minY == 0
-			rect.maxX == 5
-			rect.maxY == 6
-	}
-
-	def 'Set all values in one method call'() {
-		given:
-			var rect = new Rectanglef()
-		when:
-			rect.set(1, 2, 3, 4)
-		then:
-			rect.minX == 1
-			rect.minY == 2
-			rect.maxX == 3
-			rect.maxY == 4
+			boundingBox.minX == 0
+			boundingBox.minY == 0
+			boundingBox.minZ == 0
+			boundingBox.maxX == 8
+			boundingBox.maxY == 9
+			boundingBox.maxZ == 10
 	}
 }
