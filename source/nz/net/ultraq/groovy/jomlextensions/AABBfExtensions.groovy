@@ -17,6 +17,7 @@
 package nz.net.ultraq.groovy.jomlextensions
 
 import org.joml.primitives.AABBf
+import org.joml.primitives.AABBfc
 
 /**
  * Extensions to the {@link AABBf} class.
@@ -28,10 +29,10 @@ class AABBfExtensions {
 	/**
 	 * Expand the borders of an AABB to include another AABB.
 	 */
-	static AABBf expand(AABBf self, AABBf other) {
+	static AABBf expand(AABBf self, AABBfc other) {
 
 		return self
-			.setMin(Math.min(self.minX, other.minX), Math.min(self.minY, other.minY), Math.min(self.minZ, other.minZ))
-			.setMax(Math.max(self.maxX, other.maxX), Math.max(self.maxY, other.maxY), Math.max(self.maxZ, other.maxZ))
+			.setMin(Math.min(self.minX, other.minX()), Math.min(self.minY, other.minY()), Math.min(self.minZ, other.minZ()))
+			.setMax(Math.max(self.maxX, other.maxX()), Math.max(self.maxY, other.maxY()), Math.max(self.maxZ, other.maxZ()))
 	}
 }
