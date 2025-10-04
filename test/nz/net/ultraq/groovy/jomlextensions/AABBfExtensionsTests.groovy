@@ -39,4 +39,18 @@ class AABBfExtensionsTests extends Specification {
 			boundingBox.maxY == 9
 			boundingBox.maxZ == 10
 	}
+
+	def 'Set all values in one method call'() {
+		given:
+			var boundingBox = new AABBf()
+		when:
+			boundingBox.set(1, 2, 3, 4, 5, 6)
+		then:
+			boundingBox.minX == 1
+			boundingBox.minY == 2
+			boundingBox.minZ == 3
+			boundingBox.maxX == 4
+			boundingBox.maxY == 5
+			boundingBox.maxZ == 6
+	}
 }

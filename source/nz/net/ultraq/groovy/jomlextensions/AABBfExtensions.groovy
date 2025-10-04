@@ -35,4 +35,14 @@ class AABBfExtensions {
 			.setMin(Math.min(self.minX, other.minX()), Math.min(self.minY, other.minY()), Math.min(self.minZ, other.minZ()))
 			.setMax(Math.max(self.maxX, other.maxX()), Math.max(self.maxY, other.maxY()), Math.max(self.maxZ, other.maxZ()))
 	}
+
+	/**
+	 * Set an AABB to represent the given values.
+	 */
+	static AABBf set(AABBf self, float minX, float minY, float minZ, float maxX, float maxY, float maxZ) {
+
+		return self
+			.setMin(minX, minY, minZ)
+			.setMax(maxX, maxY, maxZ)
+	}
 }
