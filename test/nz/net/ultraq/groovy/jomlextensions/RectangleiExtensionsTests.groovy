@@ -37,4 +37,16 @@ class RectangleiExtensionsTests extends Specification {
 			rectangle.maxX == 3
 			rectangle.maxY == 4
 	}
+
+	def 'Set lengths'() {
+		given:
+			Rectanglei rectangle = new Rectanglei(2, 2, 4, 4)
+		when:
+			rectangle.setLengths(3, 3)
+		then:
+			rectangle.minX == 2
+			rectangle.minY == 2
+			rectangle.maxX == 5
+			rectangle.maxY == 5
+	}
 }

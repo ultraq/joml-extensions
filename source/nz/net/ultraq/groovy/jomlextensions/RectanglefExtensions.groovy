@@ -55,4 +55,13 @@ class RectanglefExtensions {
 		self.maxY = maxY
 		return self
 	}
+
+	/**
+	 * Set the length parts of a rectangle, adjusting {@code maxX}/{@code maxY} so
+	 * that they create the given lengths.
+	 */
+	static Rectanglef setLengths(Rectanglef self, float lengthX, float lengthY) {
+
+		return self.setMax(self.minX + lengthX as float, self.minY + lengthY as float)
+	}
 }

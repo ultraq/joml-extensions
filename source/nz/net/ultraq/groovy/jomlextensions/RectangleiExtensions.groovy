@@ -16,6 +16,7 @@
 
 package nz.net.ultraq.groovy.jomlextensions
 
+import org.joml.primitives.Rectanglef
 import org.joml.primitives.Rectanglei
 
 /**
@@ -35,5 +36,14 @@ class RectangleiExtensions {
 		self.maxX = maxX
 		self.maxY = maxY
 		return self
+	}
+
+	/**
+	 * Set the length parts of a rectangle, adjusting {@code maxX}/{@code maxY} so
+	 * that they create the given lengths.
+	 */
+	static Rectanglei setLengths(Rectanglei self, int lengthX, int lengthY) {
+
+		return self.setMax(self.minX + lengthX, self.minY + lengthY)
 	}
 }

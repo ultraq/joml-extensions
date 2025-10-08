@@ -49,4 +49,16 @@ class RectanglefExtensionsTests extends Specification {
 			rect.maxX == 3
 			rect.maxY == 4
 	}
+
+	def 'Set lengths'() {
+		given:
+			var rect = new Rectanglef(2, 2, 4, 4)
+		when:
+			rect.setLengths(3, 3)
+		then:
+			rect.minX == 2
+			rect.minY == 2
+			rect.maxX == 5
+			rect.maxY == 5
+	}
 }
