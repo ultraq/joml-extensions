@@ -19,6 +19,7 @@ package nz.net.ultraq.groovy.jomlextensions
 import org.joml.Matrix4f
 import org.joml.Vector2f
 import org.joml.Vector3f
+import org.joml.Vector4f
 
 /**
  * Static primitive size constants for the JOML classes.
@@ -56,6 +57,14 @@ class ConstantsExtensions {
 	}
 
 	/**
+	 * The number of bytes used to represent a {@code Vector4f}.
+	 */
+	static int getBYTES(Vector4f self) {
+
+		return 16 // Vector4f.FLOATS * Float.BYTES
+	}
+
+	/**
 	 * The number of floats used to represent a {@code Matrix4f}.
 	 */
 	static int getFLOATS(Matrix4f self) {
@@ -77,5 +86,13 @@ class ConstantsExtensions {
 	static int getFLOATS(Vector3f self) {
 
 		return 3
+	}
+
+	/**
+	 * The number of floats used to represent a {@code Vector4f}.
+	 */
+	static int getFLOATS(Vector4f self) {
+
+		return 4
 	}
 }
