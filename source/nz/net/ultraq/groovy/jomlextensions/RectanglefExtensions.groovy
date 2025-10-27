@@ -26,6 +26,17 @@ import org.joml.primitives.Rectanglef
 class RectanglefExtensions {
 
 	/**
+	 * Update a rectangle's values so each point is equidistant from the origin
+	 * (0, 0).
+	 */
+	static Rectanglef center(Rectanglef self) {
+
+		var halfLengthX = self.lengthX() / 2f as float
+		var halfLengthY = self.lengthY() / 2f as float
+		return set(self, -halfLengthX, -halfLengthY, halfLengthX, halfLengthY)
+	}
+
+	/**
 	 * Expand the borders of a rectangle to include another rectangle.
 	 */
 	static Rectanglef expand(Rectanglef self, Rectanglef other) {

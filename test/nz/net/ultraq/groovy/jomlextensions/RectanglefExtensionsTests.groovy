@@ -26,6 +26,18 @@ import spock.lang.Specification
  */
 class RectanglefExtensionsTests extends Specification {
 
+	def 'Center a rectangle'() {
+		given:
+			var rect = new Rectanglef(5, 5, 8, 8)
+		when:
+			rect.center()
+		then:
+			rect.minX == -1.5f
+			rect.minY == -1.5f
+			rect.maxX == 1.5f
+			rect.maxY == 1.5f
+	}
+
 	def 'Expand the borders of a rectangle to include another rectangle'() {
 		given:
 			var rect = new Rectanglef(0, 0, 3, 4)
