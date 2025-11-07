@@ -16,11 +16,11 @@
 
 plugins {
 	id 'idea'
-	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.7.0'
+	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.8.0'
 }
 
 description = 'Extensions to JOML objects to make some operations easier'
-version = '0.1.6-SNAPSHOT'
+version = '0.2.0-SNAPSHOT'
 group = 'nz.net.ultraq.groovy'
 
 configure {
@@ -37,7 +37,7 @@ configure {
 		.configureSource()
 			.withSourceDirectory('source')
 			.withDependencies() {
-				implementation 'org.apache.groovy:groovy:4.0.28'
+				implementation 'org.apache.groovy:groovy:5.0.2'
 				implementation 'org.joml:joml:1.10.8'
 				implementation 'org.joml:joml-primitives:1.10.0'
 			}
@@ -45,7 +45,7 @@ configure {
 		.configureVerification()
 			.withTestDirectory('test')
 			.withTestDependencies() {
-				testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+				testImplementation 'org.spockframework:spock-core:2.4-groovy-5.0-SNAPSHOT'
 			}
 			.useJUnitJupiter()
 			.useJacoco()

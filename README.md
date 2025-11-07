@@ -12,13 +12,13 @@ Extensions to JOML objects to make some operations easier.
 Installation
 ------------
 
-Minimum of Java 21 and Groovy 4 required.
+Minimum of Java 21 and Groovy 5 required.
 
 Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.groovy`
  - ArtifactId: `joml-extensions`
- - Version: `0.1.5`
+ - Version: `0.2.0`
 
 Check the [project tags](https://github.com/ultraq/joml-extensions/tags) for a
 list of available versions.
