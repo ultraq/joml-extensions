@@ -16,11 +16,11 @@
 
 plugins {
 	id 'idea'
-	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.7.0'
+	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.8.0'
 }
 
 description = 'Extensions to JOML objects to make some operations easier'
-version = '0.1.6-SNAPSHOT'
+version = '0.1.6'
 group = 'nz.net.ultraq.groovy'
 
 configure {
@@ -37,7 +37,7 @@ configure {
 		.configureSource()
 			.withSourceDirectory('source')
 			.withDependencies() {
-				implementation 'org.apache.groovy:groovy:4.0.28'
+				implementation 'org.apache.groovy:groovy:4.0.29'
 				implementation 'org.joml:joml:1.10.8'
 				implementation 'org.joml:joml-primitives:1.10.0'
 			}
