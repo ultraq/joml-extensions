@@ -16,6 +16,7 @@
 
 package nz.net.ultraq.groovy.jomlextensions
 
+import org.joml.Vector2f
 import org.joml.primitives.Rectanglef
 import spock.lang.Specification
 
@@ -72,5 +73,27 @@ class RectanglefExtensionsTests extends Specification {
 			rect.minY == 2
 			rect.maxX == 5
 			rect.maxY == 5
+	}
+
+	def 'Retrieve the minX/minY components'() {
+		given:
+			var rect = new Rectanglef(1, 2, 3, 4)
+		when:
+			var result = new Vector2f()
+			rect.getMin(result)
+		then:
+			result.x == 1
+			result.y == 2
+	}
+
+	def 'Retrieve the maxX/maxY components'() {
+		given:
+			var rect = new Rectanglef(1, 2, 3, 4)
+		when:
+			var result = new Vector2f()
+			rect.getMax(result)
+		then:
+			result.x == 3
+			result.y == 4
 	}
 }

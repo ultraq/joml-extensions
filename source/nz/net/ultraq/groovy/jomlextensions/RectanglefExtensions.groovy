@@ -16,6 +16,7 @@
 
 package nz.net.ultraq.groovy.jomlextensions
 
+import org.joml.Vector2f
 import org.joml.primitives.Rectanglef
 
 /**
@@ -53,6 +54,22 @@ class RectanglefExtensions {
 		return self
 			.setMin(Math.min(self.minX, minX), Math.min(self.minY, minY))
 			.setMax(Math.max(self.maxX, maxX), Math.max(self.maxY, maxY))
+	}
+
+	/**
+	 * Store and return the maxX/maxY components in the given vector.
+	 */
+	static Vector2f getMax(Rectanglef self, Vector2f result) {
+
+		return result.set(self.maxX, self.maxY)
+	}
+
+	/**
+	 * Store and return the minX/minY components in the given vector.
+	 */
+	static Vector2f getMin(Rectanglef self, Vector2f result) {
+
+		return result.set(self.minX, self.minY)
 	}
 
 	/**
