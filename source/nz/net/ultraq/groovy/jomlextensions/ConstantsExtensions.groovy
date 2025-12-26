@@ -17,6 +17,7 @@
 package nz.net.ultraq.groovy.jomlextensions
 
 import org.joml.Matrix4f
+import org.joml.Matrix4fc
 import org.joml.Vector2f
 import org.joml.Vector3f
 import org.joml.Vector4f
@@ -31,6 +32,8 @@ import org.joml.Vector4f
  * @author Emanuel Rabina
  */
 class ConstantsExtensions {
+
+	private static final Matrix4fc IDENTITY = new Matrix4f()
 
 	/**
 	 * The number of bytes used to represent a {@code Matrix4f}.
@@ -94,5 +97,13 @@ class ConstantsExtensions {
 	static int getFLOATS(Vector4f self) {
 
 		return 4
+	}
+
+	/**
+	 * Return a read-only identity matrix.
+	 */
+	static Matrix4fc getIDENTITY(Matrix4f self) {
+
+		return IDENTITY
 	}
 }
