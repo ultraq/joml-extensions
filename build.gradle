@@ -16,11 +16,11 @@
 
 plugins {
 	id 'idea'
-	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.8.0'
+	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.9.4'
 }
 
 description = 'Extensions to JOML objects to make some operations easier'
-version = '0.1.8'
+version = '0.2.0'
 group = 'nz.net.ultraq.groovy'
 
 configure {
@@ -37,7 +37,7 @@ configure {
 		.configureSource()
 			.withSourceDirectory('source')
 			.withDependencies() {
-				implementation 'org.apache.groovy:groovy:4.0.29'
+				implementation 'org.apache.groovy:groovy:5.0.6'
 				implementation 'org.joml:joml:1.10.8'
 				implementation 'org.joml:joml-primitives:1.10.0'
 			}
@@ -45,7 +45,7 @@ configure {
 		.configureVerification()
 			.withTestDirectory('test')
 			.withTestDependencies() {
-				testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+				testImplementation 'org.spockframework:spock-core:2.4-groovy-5.0'
 			}
 			.useJUnitJupiter()
 			.useJacoco()
@@ -63,11 +63,13 @@ configure {
 			email: 'emanuelrabina@gmail.com',
 			url: 'https://www.ultraq.net.nz'
 		])
-		.publishToMavenCentral(
-			findProperty('mavenCentral.publisher.username'),
-			findProperty('mavenCentral.publisher.password'),
-			'nz.net.ultraq'
-		)
+
+	createMavenCentralPublisherBundle()
+		.forThisProject()
+		.withCredentials(
+      findProperty('mavenCentral.publisher.username'),
+      findProperty('mavenCentral.publisher.password'),
+    )
 }
 
 configurations.configureEach {
