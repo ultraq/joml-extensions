@@ -18,7 +18,7 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.groovy`
  - ArtifactId: `joml-extensions`
- - Version: `0.2.0`
+ - Version: `0.3.0`
 
 Check the [project tags](https://github.com/ultraq/joml-extensions/tags) for a
 list of available versions.
