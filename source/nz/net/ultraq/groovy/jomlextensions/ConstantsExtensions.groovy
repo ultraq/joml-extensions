@@ -36,38 +36,6 @@ class ConstantsExtensions {
 	private static final Matrix4fc IDENTITY = new Matrix4f()
 
 	/**
-	 * The number of bytes used to represent a {@code Matrix4f}.
-	 */
-	static int getBYTES(Matrix4f self) {
-
-		return 64 // Matrix4f.FLOATS * Float.BYTES
-	}
-
-	/**
-	 * The number of bytes used to represent a {@code Vector2f}.
-	 */
-	static int getBYTES(Vector2f self) {
-
-		return 8 // Vector2f.FLOATS * Float.BYTES
-	}
-
-	/**
-	 * The number of bytes used to represent a {@code Vector3f}.
-	 */
-	static int getBYTES(Vector3f self) {
-
-		return 12 // Vector3f.FLOATS * Float.BYTES
-	}
-
-	/**
-	 * The number of bytes used to represent a {@code Vector4f}.
-	 */
-	static int getBYTES(Vector4f self) {
-
-		return 16 // Vector4f.FLOATS * Float.BYTES
-	}
-
-	/**
 	 * The number of floats used to represent a {@code Matrix4f}.
 	 */
 	static int getFLOATS(Matrix4f self) {

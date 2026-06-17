@@ -20,7 +20,7 @@ plugins {
 }
 
 description = 'Extensions to JOML objects to make some operations easier'
-version = '0.2.0'
+version = '0.3.0'
 group = 'nz.net.ultraq.groovy'
 
 configure {
@@ -38,7 +38,7 @@ configure {
 			.withSourceDirectory('source')
 			.withDependencies() {
 				implementation 'org.apache.groovy:groovy:5.0.6'
-				implementation 'org.joml:joml:1.10.8'
+				implementation 'org.joml:joml:1.10.9'
 				implementation 'org.joml:joml-primitives:1.10.0'
 			}
 			.expandExtensionModuleVersion()
@@ -70,8 +70,4 @@ configure {
       findProperty('mavenCentral.publisher.username'),
       findProperty('mavenCentral.publisher.password'),
     )
-}
-
-configurations.configureEach {
-	exclude group: 'org.jetbrains.kotlin'
 }
