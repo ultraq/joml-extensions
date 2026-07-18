@@ -17,6 +17,7 @@
 package nz.net.ultraq.groovy.jomlextensions
 
 import org.joml.primitives.Circlef
+import org.joml.primitives.Rectanglef
 import spock.lang.Specification
 
 /**
@@ -26,11 +27,19 @@ import spock.lang.Specification
  */
 class CirclefExtensionsTests extends Specification {
 
-	def 'Check if two circles intersect'(Circlef circle1, Circlef circle2) {
+	def 'intersects - Check if two circles intersect'(Circlef circle1, Circlef circle2) {
 		expect:
 			circle1.intersects(circle2)
 		where:
 			circle1 << [new Circlef(0f, 0f, 1f), new Circlef(-1f, 0f, 1f)]
 			circle2 << [new Circlef(0f, 0f, 1f), new Circlef(1f, 0f, 1f)]
+	}
+
+	def 'intersects - Check if a circle intersects a rectangle'(Circlef circle, Rectanglef rectangle) {
+		expect:
+			circle.intersects(rectangle)
+		where:
+			circle << [new Circlef(0f, 0f, 1f), new Circlef(0f, 0f, 1f)]
+			rectangle << [new Rectanglef(0f, 0f, 2f, 2f), new Rectanglef(-2f, -2f, 2f, 2f)]
 	}
 }
