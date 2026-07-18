@@ -30,9 +30,7 @@ class CirclefExtensionsTests extends Specification {
 		expect:
 			circle1.intersects(circle2)
 		where:
-			// @formatter:off
 			circle1 << [new Circlef(0f, 0f, 1f), new Circlef(-1f, 0f, 1f)]
-			circle2 << [new Circlef(0f, 0f, 1f), new Circlef( 1f, 0f, 1f)]
-			// @formatter:on
+			circle2 << [new Circlef(0f, 0f, 1f), new Circlef(1f, 0f, 1f)]
 	}
 }

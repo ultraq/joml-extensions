@@ -17,6 +17,7 @@
 package nz.net.ultraq.groovy.jomlextensions
 
 import org.joml.Vector2f
+import org.joml.primitives.Circlef
 import org.joml.primitives.Rectanglef
 import spock.lang.Specification
 
@@ -27,7 +28,7 @@ import spock.lang.Specification
  */
 class RectanglefExtensionsTests extends Specification {
 
-	def 'Center a rectangle'() {
+	def '#center - Center a rectangle'() {
 		given:
 			var rect = new Rectanglef(5, 5, 8, 8)
 		when:
@@ -39,7 +40,7 @@ class RectanglefExtensionsTests extends Specification {
 			rect.maxY == 1.5f
 	}
 
-	def 'Expand the borders of a rectangle to include another rectangle'() {
+	def '#expand - Expand the borders of a rectangle to include another rectangle'() {
 		given:
 			var rect = new Rectanglef(0, 0, 3, 4)
 		when:
@@ -51,7 +52,43 @@ class RectanglefExtensionsTests extends Specification {
 			rect.maxY == 6
 	}
 
-	def 'Set all values in one method call'() {
+	def '#getMax - Retrieve the maxX/maxY components'() {
+		given:
+			var rect = new Rectanglef(1, 2, 3, 4)
+		when:
+			var result = new Vector2f()
+			rect.getMax(result)
+		then:
+			result.x == 3
+			result.y == 4
+	}
+
+	def '#getMin - Retrieve the minX/minY components'() {
+		given:
+			var rect = new Rectanglef(1, 2, 3, 4)
+		when:
+			var result = new Vector2f()
+			rect.getMin(result)
+		then:
+			result.x == 1
+			result.y == 2
+	}
+
+	def '#intersectsCircle - Returns true when a rectangle intersects a circle'() {
+		given:
+			var rect = new Rectanglef(0f, 0f, 3f, 4f)
+		expect:
+			rect.intersectsCircle(new Circlef(4f, 0f, 2f))
+	}
+
+	def '#intersectsCircle - Returns true when a circle\'s center is inside a rectangle'() {
+		given:
+			var rect = new Rectanglef(0f, 0f, 4f, 4f)
+		expect:
+			rect.intersectsCircle(new Circlef(2f, 2f, 1f))
+	}
+
+	def '#set - Set all values in one method call'() {
 		given:
 			var rect = new Rectanglef()
 		when:
@@ -63,7 +100,7 @@ class RectanglefExtensionsTests extends Specification {
 			rect.maxY == 4
 	}
 
-	def 'Set lengths'() {
+	def '#setLengths - Set lengths'() {
 		given:
 			var rect = new Rectanglef(2, 2, 4, 4)
 		when:
@@ -73,27 +110,5 @@ class RectanglefExtensionsTests extends Specification {
 			rect.minY == 2
 			rect.maxX == 5
 			rect.maxY == 5
-	}
-
-	def 'Retrieve the minX/minY components'() {
-		given:
-			var rect = new Rectanglef(1, 2, 3, 4)
-		when:
-			var result = new Vector2f()
-			rect.getMin(result)
-		then:
-			result.x == 1
-			result.y == 2
-	}
-
-	def 'Retrieve the maxX/maxY components'() {
-		given:
-			var rect = new Rectanglef(1, 2, 3, 4)
-		when:
-			var result = new Vector2f()
-			rect.getMax(result)
-		then:
-			result.x == 3
-			result.y == 4
 	}
 }

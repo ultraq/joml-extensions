@@ -18,6 +18,7 @@ package nz.net.ultraq.groovy.jomlextensions
 
 import org.joml.primitives.Intersectionf
 import org.joml.primitives.Circlef
+import org.joml.primitives.Rectanglef
 
 /**
  * Extensions to the {@link Circlef} class.
@@ -32,5 +33,13 @@ class CirclefExtensions {
 	static boolean intersects(Circlef self, Circlef other) {
 
 		return Intersectionf.testCircleCircle(self.x, self.y, self.r, other.x, other.y, other.r)
+	}
+
+	/**
+	 * Check if a circle intersects a rectangle.
+	 */
+	static boolean intersects(Circlef self, Rectanglef other) {
+
+		return other.intersectsCircle(self)
 	}
 }

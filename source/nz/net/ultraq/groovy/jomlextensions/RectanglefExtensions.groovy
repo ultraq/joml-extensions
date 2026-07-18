@@ -17,6 +17,7 @@
 package nz.net.ultraq.groovy.jomlextensions
 
 import org.joml.Vector2f
+import org.joml.primitives.Circlef
 import org.joml.primitives.Rectanglef
 
 /**
@@ -70,6 +71,18 @@ class RectanglefExtensions {
 	static Vector2f getMin(Rectanglef self, Vector2f result) {
 
 		return result.set(self.minX, self.minY)
+	}
+
+	/**
+	 * Return whether a rectangle intersects a circle.
+	 */
+	static boolean intersectsCircle(Rectanglef self, Circlef other) {
+
+		// A rectangle intersects a circle if the distance to the closest edge is
+		// less than the circle's radius, or the rectangle contains the circle's center
+		var distanceToClosestX = Math.min(Math.abs(other.x - self.minX), Math.abs(other.x - self.maxX))
+		var distanceToClosestY = Math.min(Math.abs(other.y - self.minY), Math.abs(other.y - self.maxY))
+		return distanceToClosestX < other.r || distanceToClosestY < other.r || self.containsPoint(other.x, other.y)
 	}
 
 	/**
