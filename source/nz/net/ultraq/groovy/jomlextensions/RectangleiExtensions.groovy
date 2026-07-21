@@ -16,7 +16,6 @@
 
 package nz.net.ultraq.groovy.jomlextensions
 
-import org.joml.primitives.Rectanglef
 import org.joml.primitives.Rectanglei
 
 /**
